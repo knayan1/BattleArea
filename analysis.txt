@@ -1,0 +1,77 @@
+ThoughtWorks BattleShip Challenge:
+----------------------------------------------------------------------------------
+Author                  : Kamal Nayan
+Email                   : *******@gmail.com
+Tested on               : Python 3.7.0 on windows
+IDE used                : pyCharm
+Other info              : PEP8 convention followed
+External Modules used   : None
+Internal Modules used   : None for the main program
+                          io, unittest, unittest.mock for running tests
+----------------------------------------------------------------------------------
+
+==================================================================================
+================================= START THE GAME =================================
+==================================================================================
+
+1. Execute following command:
+python main.py
+
+2. Paste following inputs to console
+5 E
+2
+Q 1 1 A1 B2
+P 2 1 D4 C3
+A1 B2 B2 B3
+A1 B2 B3 A1 D1 E1 D4 D4 D5 D5
+
+3. Observe the output printed on screen
+Player-1 fires a missile with target A1 which got miss
+Player-2 fires a missile with target A1 which got hit
+Player-2 fires a missile with target B2 which got miss
+Player-1 fires a missile with target B2 which got hit
+Player-1 fires a missile with target B2 which got hit
+Player-1 fires a missile with target B3 which got miss
+Player-2 fires a missile with target B3 which got miss
+Player-1 has no more missiles left to launch
+Player-2 fires a missile with target A1 which got hit
+Player-2 fires a missile with target D1 which got miss
+Player-1 has no more missiles left to launch
+Player-2 fires a missile with target E1 which got miss
+Player-1 has no more missiles left to launch
+Player-2 fires a missile with target D4 which got hit
+Player-2 fires a missile with target D4 which got miss
+Player-1 has no more missiles left to launch
+Player-2 fires a missile with target D5 which got hit
+Player-2 won the battle
+
+
+==================================================================================
+=============================== EXECUTE TEST CASES ===============================
+==================================================================================
+1. Execute following command:
+python test_case.py
+
+2. If all goes good, following will be displayed
+Ran 16 tests in 0.003s
+
+OK
+
+==================================================================================
+================================== APPROACH ======================================
+==================================================================================
+- We have a battle area, this is equivalent to a 2D matrix.
+- We need to change the subscripts to 0 based index, currently its alphanum
+- If ship is given of size 1x2 and to be stored at A1, means it's two chunks of 1x1. So, lets place at A1 and its next block i.e. A2
+- Similarly if it would be 2x2 for A2, we would have stored 1x1 at A2, B2, A3, B3
+- We know the ship type, so why not to put a dictionary at each cell, that will contain "lives remaiaing" and "ship type"
+- Lets take targets and set to player's property
+- When we attack, we check whether opponent have anything horizontally.
+- If No, its a miss, give chance to other player now
+- But if yes, then reduce the remianing lives in that particular cell by 1
+- Same player will keep on hitting
+- Keep on outputting the log message about hit/miss
+- We are also maintaining overall count of the missiles left with the player
+- If this count for any player goes 0, declare other as winner
+- And what about a trophy? ;-) Yeyyy!!!
+==================================================================================
