@@ -14,5 +14,5 @@ Please feel free to create PR, if you feel something can be changed
 ## Author
 Kamal Nayan
 
-[1]: https://raw.githubusercontent.com/knayan1/BattleArea/master/BattleShip_Problem_Statement.pdf
+[1]: https://github.com/knayan1/BattleArea/blob/master/BattleShip_Problem_Statement.pdf
 [2]: https://raw.githubusercontent.com/knayan1/BattleArea/master/analysis.txt
